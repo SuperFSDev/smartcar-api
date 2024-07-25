@@ -1,13 +1,12 @@
-import express from "express";
-import router from "../../src/routes/index.js";
-import errorHandler from "../../src/middleware/errorHandler";
-import axios from "axios";
-import request from "supertest";
+import express from 'express';
+import axios from 'axios';
+import router from '../../src/routes/index.js';
+import errorHandler from '../../src/middleware/errorHandler.js';
 
 export const setupApp = () => {
   const app = express();
   app.use(express.json());
-  app.use("/vehicles", router);
+  app.use('/vehicles', router);
   app.use(errorHandler);
   return app;
 };
@@ -25,7 +24,7 @@ export const mockAxiosError = (status, message) => {
 export const expectErrorResponse = (res, statusCode, message) => {
   expect(res.statusCode).toEqual(statusCode);
   expect(res.body).toEqual({
-    status: "error",
+    status: 'error',
     statusCode,
     message,
   });
