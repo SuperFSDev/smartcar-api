@@ -13,6 +13,7 @@ This project provides an API for fetching vehicle information, security status, 
 - [Code Quality](#code-quality)
   - [Linting](#linting)
   - [Prettier](#prettier)
+- [Logging](#logging)
 - [Testing](#testing)
 
 ## Installation
@@ -148,6 +149,12 @@ To format the code:
 ```sh
 npm run format
 ```
+
+## Logging
+
+Logging is handled using a custom logger built with the winston library.
+
+To view the logs, navigate to the logs directory and open the log file.
 
 ## Testing
 
